@@ -1,0 +1,28 @@
+<% include partials/header %>
+<div class="ui main text container segment">
+  <div class="ui huge header">Add Marks!</div>
+  <form class="ui form" action="/diary" method="POST">
+    <div class="field">
+      <label>Name</label>
+      <input type="text" name="diary[name]" placeholder="Full Name" />
+    </div>
+    <div class="field">
+      <label>Subject</label>
+      <input
+        type="text"
+        name="diary[subject]"
+        placeholder="Which subject did are you entering?"
+      />
+    </div>
+    <div class="field">
+      <label>Marks</label>
+      <input
+        type="text"
+        name="diary[marks]"
+        placeholder="How much did they get?"
+      />
+    </div>
+    <input class="ui green big basic button" type="submit" />
+  </form>
+</div>
+<% include partials/footer %>

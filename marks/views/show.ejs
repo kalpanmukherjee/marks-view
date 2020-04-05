@@ -1,0 +1,30 @@
+<% include partials/header %>
+<div class="ui main text container segment">
+  <div class="ui huge header"><%= post.name%></div>
+  <div class="content">
+    <div class="meta small">
+      <%=post.created.toDateString() %>
+    </div>
+  </div>
+  <div class="ui top attached segment">
+    <div class="description">
+      <p><%-post.subject%></p>
+    </div>
+    <div class="marks">
+      <p><%-post.marks%></p>
+    </div>
+  </div>
+  <br />
+  <div>
+    <a class="ui yellow basic button" href="/diary/<%= post._id%>/edit">Edit</a>
+    <form
+      id="delete"
+      action="/diary/<%= post._id%>?_method=DELETE"
+      method="POST"
+    >
+      <button class="ui red basic button">Delete</button>
+    </form>
+  </div>
+</div>
+
+<% include partials/footer %>
