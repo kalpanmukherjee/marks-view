@@ -43,15 +43,12 @@ app.get("/diary", function (req, res) {
   });
 });
 
-app.get("/diary/index1", function (req, res) {
+app.get("/diary/index1/:id", function (req, res) {
   Diary.find({}, function (err, diary) {
-    var student = {
-      first: req.body.somename,
-    };
     if (err) {
       console.log(err);
     } else {
-      res.render("index1", { diary: diary, uservalue: student });
+      res.render("index1", { diary: diary, output: req.params.id });
     }
   });
 });
@@ -76,6 +73,13 @@ app.post("/diary", function (req, res) {
       res.redirect("/diary");
     }
   });
+});
+
+app.post("/diary/submit", function (req, res){ 
+
+  var id = req.body.id;
+  
+  res.redirect("/diary/index1/" + id)
 });
 
 //SHOW ROUTE

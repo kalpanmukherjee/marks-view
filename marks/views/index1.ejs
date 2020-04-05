@@ -6,31 +6,33 @@
       <%diary.find(function(mydiary){ %>
       <div class="item">
         <div class="content">
-          <a href="/diary/<%=mydiary._id%>" class="header"><%=mydiary.name%></a>
-          <div class="meta">
-            <span><%=mydiary.created.toDateString()%></span>
-          </div>
-          <div class="description">
-            <% if (typeof mydiary.subject == 'undefined' ) { %>
-            <p></p>
-            <% } else { %>
+
+          <% if(mydiary.name == output) { %>
+            <a href="/diary/<%=mydiary._id%>" class="header"><%=mydiary.name%></a>
+
             <p><%=mydiary.subject.substring(0, 90) %></p>
             <p><%=mydiary.marks %></p>
-            <% } %>
-            <!--						<p>< %-mydiary.body.substring(0,90)% >...</p>-->
-          </div>
-          <div class="extra">
-            <a
-              href="/diary/<%=mydiary._id%>"
-              class="ui animated green basic button"
-              tabindex="0"
-            >
-              <div class="visible content">Read More</div>
-              <div class="hidden content">
-                <i class="right arrow icon"></i>
-              </div>
-            </a>
-          </div>
+
+            <div class="extra">
+              <a
+                href="/diary/<%=mydiary._id%>"
+                class="ui animated green basic button"
+                tabindex="0"
+              >
+                <div class="visible content">Read More</div>
+                <div class="hidden content">
+                  <i class="right arrow icon"></i>
+                </div>
+              </a>
+            </div>
+
+            <% } else {%> 
+              
+              <p></p>
+
+              <%}%>
+
+
         </div>
       </div>
       <% }) %>

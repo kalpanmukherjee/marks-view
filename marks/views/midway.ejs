@@ -1,13 +1,16 @@
 <% include partials/header %>
 <div class="ui main text container segment">
   <div class="ui huge header">Find Marks!</div>
-  <form class="ui form" action="/diary/index1" method="POST">
+  <form class="ui form" action="/diary/submit" method="POST">
     <div class="field">
       <label>Name</label>
-      <input type="text" name="somename" placeholder="Full Name" />
+      <input type="text" name="id" placeholder="Full Name" />
     </div>
-    <input class="ui green big basic button" type="submit" value="save" />
-    <% console.log("name is", somename) %>
+
+    <button type="submit">Submit</button>
+
+    <!-- <input class="ui green big basic button" type="submit" value="save" /> -->
+
   </form>
 </div>
 <% include partials/footer %>
