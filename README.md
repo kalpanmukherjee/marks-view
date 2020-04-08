@@ -12,17 +12,17 @@ run <i>node app.js</i></br>
 open localhost:3000
 
 ## Images
-Student and Faculty Tab
+Student and Faculty Tab</br>
 <img src="assets/1.png" width="500">
 </br>
-Entering Name, Subject and Marks in the Faculty Tab
+Entering Name, Subject and Marks in the Faculty Tab</br>
 <img src="assets/2.png" width="500">
 </br>
-Entering Name to search for in the Student Tab
+Entering Name to search for in the Student Tab</br>
 <img src="assets/3.png" width="500">
 </br>
-Display Student Records Matching the given Name
+Display Student Records Matching the given Name</br>
 <img src="assets/4.png" width="500">
 </br>
-MongoDB Collection
+MongoDB Collection</br>
 <img src="assets/5.png" width="500">
