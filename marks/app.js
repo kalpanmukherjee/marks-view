@@ -43,6 +43,7 @@ app.get("/diary", function (req, res) {
   });
 });
 
+//SHOW MARKS
 app.get("/diary/index1/:id", function (req, res) {
   Diary.find({}, function (err, diary) {
     if (err) {
@@ -75,10 +76,9 @@ app.post("/diary", function (req, res) {
   });
 });
 
-app.post("/diary/submit", function (req, res){ 
-
+//SUBMIT SEARCH
+app.post("/diary/submit", function (req, res){
   var id = req.body.id;
-  
   res.redirect("/diary/index1/" + id)
 });
 
@@ -93,45 +93,6 @@ app.get("/diary/:id", function (req, res) {
   });
 });
 
-//EDIT ROUTE
-app.get("/diary/:id/edit", function (req, res) {
-  Diary.findById(req.params.id, function (err, foundPost) {
-    if (err) {
-      req.render("/diary");
-    } else {
-      res.render("edit", { post: foundPost });
-    }
-  });
-});
-
-//UPDATE ROUTE
-app.put("/diary/:id", function (req, res) {
-  //Diary.findByIdAndUpdate(id , new data, callback)
-  req.body.diary.body = req.sanitize(req.body.diary.body);
-  Diary.findByIdAndUpdate(req.params.id, req.body.diary, function (
-    err,
-    updatePost
-  ) {
-    if (err) {
-      res.redirect("/diary");
-    } else {
-      res.redirect("/diary/" + req.params.id);
-    }
-  });
-});
-
-//DELETE ROUTE
-app.delete("/diary/:id", function (req, res) {
-  //destroy
-  Diary.findByIdAndDelete(req.params.id, function (err) {
-    if (err) {
-      res.redirect("/diary");
-    } else {
-      res.redirect("/diary");
-    }
-  });
-  //redirect to homepage
-});
 
 // Tell express to listen for requests (start server)
 app.listen(3000, function () {

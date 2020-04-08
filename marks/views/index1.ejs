@@ -4,27 +4,19 @@
   <div class="ui top attached segment">
     <div class="ui divided items">
       <%diary.find(function(mydiary){ %>
-      <div class="item">
-        <div class="content">
+      
 
           <% if(mydiary.name == output) { %>
-            <a href="/diary/<%=mydiary._id%>" class="header"><%=mydiary.name%></a>
+            <div class="item">
+              <div class="content">
+            <p>NAME: <%=mydiary.name%></p>
 
-            <p><%=mydiary.subject.substring(0, 90) %></p>
-            <p><%=mydiary.marks %></p>
+            <p>SUBJECT: <%=mydiary.subject.substring(0, 90) %></p>
+            <p>MARKS: <%=mydiary.marks %></p>
+          </div>
+        </div>
 
-            <div class="extra">
-              <a
-                href="/diary/<%=mydiary._id%>"
-                class="ui animated green basic button"
-                tabindex="0"
-              >
-                <div class="visible content">Read More</div>
-                <div class="hidden content">
-                  <i class="right arrow icon"></i>
-                </div>
-              </a>
-            </div>
+            
 
             <% } else {%> 
               
@@ -33,8 +25,7 @@
               <%}%>
 
 
-        </div>
-      </div>
+
       <% }) %>
     </div>
   </div>
